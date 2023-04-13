@@ -64,6 +64,28 @@ body {
   object-fit: cover;
 }
 
+.thumbs{
+  display: flex;
+  flex-direction: column;  
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 135px;
+  background-color: black;
+  height: 100%;
+}
+.thumbs img{
+  width: 100%;
+  height: calc(100% / 5);
+  object-fit: cover;  
+  opacity: .5;
+}
+
+.thumbs img.active{
+  border: 2px solid white;
+  opacity: 1;
+}
+
 .hide {
   display: none;
 }

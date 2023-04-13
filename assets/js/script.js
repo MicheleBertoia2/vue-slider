@@ -38,6 +38,7 @@ for (let i = 0; i < images.length; i++) {
   `  
 }
 
+
 // 4.
 const imagesCollection = document.getElementsByClassName('item');
 
