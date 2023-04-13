@@ -7,26 +7,31 @@ createApp({
       imageDb : [
 
         {
+          order : 0,
           source: 'assets/img/01.webp',
           alt : 'Spoderman'
         },
 
         {
+          order : 1,
           source: 'assets/img/02.webp',
           alt : 'Spoderman'
         },
 
         {
+          order : 2,
           source: 'assets/img/03.webp',
           alt : 'Spoderman'
         },
 
         {
+          order : 3,
           source: 'assets/img/04.webp',
           alt : 'Spoderman'
         },
 
         {
+          order : 4,
           source: 'assets/img/05.webp',
           alt : 'Spoderman'
         },
@@ -38,7 +43,8 @@ createApp({
         'assets/img/04.webp',
         'assets/img/05.webp',
       ],
-      counter : 0     
+      counter : 0,
+      isActive : false     
     }
   },
 
@@ -47,13 +53,19 @@ createApp({
       if(isNext){
         this.counter++;
         if(this.counter === this.imageDb.length) this.counter = 0;
-        console.log(this.counter);
       }else{
         this.counter--;
         if(this.counter < 0) this.counter = this.imageDb.length - 1;
-        console.log(this.counter);
       }
+    },
+
+    activeThumb  (order){
+      this.counter = order;
+      this.isActive = !this.isActive
     }
+  },
+
+  mounted(){
   }
 
 }).mount('#app')

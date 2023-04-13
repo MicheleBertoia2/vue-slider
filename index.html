@@ -31,7 +31,7 @@
         </div>
   
         <div class="thumbs">
-          <img v-for="image in imageDb" :src="image.source" alt="image.alt">
+          <img v-for="(image,index) in imageDb" :class="{'active' : isActive}" @click="activeThumb(image.order)" :src="image.source" alt="image.alt">
          
         </div>
       </div>
