@@ -44,7 +44,8 @@ createApp({
         'assets/img/05.webp',
       ],
       counter : 0,
-      isActive : false     
+      isActive : false,
+      elemSelezionato : null     
     }
   },
 
@@ -59,9 +60,9 @@ createApp({
       }
     },
 
-    activeThumb  (order){
+    activeThumb  (order, elem){
       this.counter = order;
-      this.isActive = !this.isActive
+      this.elemSelezionato = elem      
     }
   },
 
