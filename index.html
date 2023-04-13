@@ -27,19 +27,12 @@
         <div class="btn-arrow next" @click="nextPrev(true)"><i class="fa-solid fa-chevron-down"></i></div>
   
         <div class="img-box">
-          <img :src="" alt="">
-          <!-- <img  src="assets/img/02.webp" alt=""> -->
-          <!-- <img  src="assets/img/03.webp" alt=""> -->
-          <!-- <img  src="assets/img/04.webp" alt=""> -->
-          <!-- <img  src="assets/img/05.webp" alt=""> -->
+          <img :src="imagesSlider[counter]" alt="">          
         </div>
   
         <div class="thumbs">
-          <img  src="assets/img/01.webp" alt="">
-          <img  src="assets/img/02.webp" alt="">
-          <img  src="assets/img/03.webp" alt="">
-          <img  src="assets/img/04.webp" alt="">
-          <img  src="assets/img/05.webp" alt="">
+          <img v-for="image in imageDb" :src="image.source" alt="image.alt">
+         
         </div>
       </div>
   
