@@ -44,7 +44,7 @@ createApp({
         'assets/img/05.webp',
       ],
       counter : 0,
-      isActive : false,
+      isMouseOver : false,
       elemSelezionato : null     
     }
   },
@@ -63,10 +63,34 @@ createApp({
     activeThumb  (order, elem){
       this.counter = order;
       this.elemSelezionato = elem      
+    },
+
+    autoPlay (){
+      if(!this.isMouseOver) this.nextPrev(true)
+    },
+
+    startAutoPlay(){
+      setInterval(() => {
+        this.autoPlay();
+      },2000)
+    },
+
+    stopPlay(){
+      this.isMouseOver = true
+    },
+    
+    startPlay(){
+      this.elemSelezionato = null
+      this.isMouseOver = false
     }
+
+    
   },
 
-  mounted(){
+  mounted (){
+    this.startAutoPlay()
   }
+
+  
 
 }).mount('#app')
